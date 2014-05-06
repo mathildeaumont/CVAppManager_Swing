@@ -805,7 +805,6 @@ public class CVManagerApp {
             return false;
         } else {
 
-
             Resume resume = new Resume();
             resume.setLastName(nom.getText());
             resume.setFirstName(prenom.getText());
@@ -902,6 +901,28 @@ public class CVManagerApp {
 
             if (added == true) {
                 JOptionPane.showMessageDialog(frame, "CV ajouté !");
+                compInf = new ArrayList<JTextField>();
+                compInf.add(new JTextField(""));
+                compInf.add(new JTextField(""));
+
+                languages = new ArrayList<JTextField>();
+                languages.add(new JTextField(""));
+                languages.add(new JTextField(""));
+
+                schools = new ArrayList<JTextField>();
+                schools.add(new JTextField(""));
+                schools.add(new JTextField(""));
+                schools.add(new JTextField(""));
+
+                experiences = new ArrayList<JTextField>();
+                experiences.add(new JTextField(""));
+                experiences.add(new JTextField(""));
+                experiences.add(new JTextField(""));
+
+                experiencesProf = new ArrayList<JTextField>();
+                experiencesProf.add(new JTextField(""));
+                experiencesProf.add(new JTextField(""));
+                experiencesProf.add(new JTextField(""));
             }
             return true;
         }

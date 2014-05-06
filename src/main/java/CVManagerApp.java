@@ -157,19 +157,19 @@ public class CVManagerApp {
         languages.add(new JTextField("a"));
 
         schools = new ArrayList<JTextField>();
-        schools.add(new JTextField("a"));
-        schools.add(new JTextField("a"));
-        schools.add(new JTextField("a"));
+        schools.add(new JTextField(""));
+        schools.add(new JTextField(""));
+        schools.add(new JTextField(""));
 
         experiences = new ArrayList<JTextField>();
-        experiences.add(new JTextField("a"));
-        experiences.add(new JTextField("a"));
-        experiences.add(new JTextField("a"));
+        experiences.add(new JTextField(""));
+        experiences.add(new JTextField(""));
+        experiences.add(new JTextField(""));
 
         experiencesProf = new ArrayList<JTextField>();
-        experiencesProf.add(new JTextField("a"));
-        experiencesProf.add(new JTextField("a"));
-        experiencesProf.add(new JTextField("a"));
+        experiencesProf.add(new JTextField(""));
+        experiencesProf.add(new JTextField(""));
+        experiencesProf.add(new JTextField(""));
 
         java.net.URL ajouter = getClass().getResource("ajouter.png");
         ImageIcon iconAjouter = new ImageIcon(ajouter);
@@ -599,27 +599,27 @@ public class CVManagerApp {
                 if (b == true) {
                     placeComponents();
                     compInf = new ArrayList<JTextField>();
-                    compInf.add(new JTextField("a"));
-                    compInf.add(new JTextField("a"));
+                    compInf.add(new JTextField(""));
+                    compInf.add(new JTextField(""));
 
                     languages = new ArrayList<JTextField>();
-                    languages.add(new JTextField("a"));
-                    languages.add(new JTextField("a"));
+                    languages.add(new JTextField(""));
+                    languages.add(new JTextField(""));
 
                     schools = new ArrayList<JTextField>();
-                    schools.add(new JTextField("a"));
-                    schools.add(new JTextField("a"));
-                    schools.add(new JTextField("a"));
+                    schools.add(new JTextField(""));
+                    schools.add(new JTextField(""));
+                    schools.add(new JTextField(""));
 
                     experiences = new ArrayList<JTextField>();
-                    experiences.add(new JTextField("a"));
-                    experiences.add(new JTextField("a"));
-                    experiences.add(new JTextField("a"));
+                    experiences.add(new JTextField(""));
+                    experiences.add(new JTextField(""));
+                    experiences.add(new JTextField(""));
 
                     experiencesProf = new ArrayList<JTextField>();
-                    experiencesProf.add(new JTextField("a"));
-                    experiencesProf.add(new JTextField("a"));
-                    experiencesProf.add(new JTextField("a"));
+                    experiencesProf.add(new JTextField(""));
+                    experiencesProf.add(new JTextField(""));
+                    experiencesProf.add(new JTextField(""));
                 }
             }
         });

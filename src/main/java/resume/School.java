@@ -1,10 +1,12 @@
 package resume;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Mathilde on 08/04/14.
  */
+
 public class School {
 
     // Nom de l'école
@@ -15,6 +17,9 @@ public class School {
 
     // Années d'études
     private String year;
+
+    public School() {
+    }
 
     public School(String name, String diplom, String year) {
         this.name = name;

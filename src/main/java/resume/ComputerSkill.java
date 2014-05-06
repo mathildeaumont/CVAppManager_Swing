@@ -1,10 +1,12 @@
 package resume;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Mathilde on 08/04/14.
  */
+
 public class ComputerSkill {
 
     // Nom de la compétence
@@ -12,6 +14,9 @@ public class ComputerSkill {
 
     // Niveau de la compétence
     private String level;
+
+    public ComputerSkill() {
+    }
 
     public ComputerSkill(String name, String level) {
         this.name = name;

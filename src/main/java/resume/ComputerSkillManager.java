@@ -1,11 +1,13 @@
 package resume;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Mathilde on 08/04/14.
  */
+@XmlRootElement
 public class ComputerSkillManager {
 
     private List<ComputerSkill> computerSkill;

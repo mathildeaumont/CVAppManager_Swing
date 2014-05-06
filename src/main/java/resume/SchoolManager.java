@@ -2,10 +2,14 @@ package resume;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Mathilde on 08/04/14.
  */
+@XmlRootElement
 public class SchoolManager {
 
     private List<School> school;

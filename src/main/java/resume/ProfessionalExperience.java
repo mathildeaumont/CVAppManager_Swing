@@ -1,10 +1,12 @@
 package resume;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Mathilde on 08/04/14.
  */
+
 public class ProfessionalExperience {
 
     // Nom de l'entreprise
@@ -15,6 +17,9 @@ public class ProfessionalExperience {
 
     // Tâches effectuées
     private String jobDone;
+
+    public ProfessionalExperience() {
+    }
 
     public ProfessionalExperience(String societyName, String year, String jobDone) {
         this.societyName = societyName;

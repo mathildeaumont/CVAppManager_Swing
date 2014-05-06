@@ -804,22 +804,22 @@ public class CVManagerApp {
         } else {
 
 
-            /*Resume resume = new Resume();
+            Resume resume = new Resume();
             resume.setLastName(nom.getText());
             resume.setFirstName(prenom.getText());
-            resume.setObjectif(objectif.getText());*/
+            resume.setObjectif(objectif.getText());
 
             LanguageManager lm = new LanguageManager();
             for (int i = 0; i < languages.size(); i++) {
                 String name = languages.get(i).getText(); i++;
                 String level = languages.get(i).getText();
                 Language lang = new Language(name, level);
-                System.out.println(name);
-                System.out.println(lang.getLevel());
+                /*System.out.println(name);
+                System.out.println(lang.getLevel());*/
 
                 lm.addLanguage(lang);
             }
-            //resume.setLanguages(lm);
+            resume.setLanguages(lm);
 
             ComputerSkillManager cm = new ComputerSkillManager();
             for (int i = 0; i < compInf.size(); i++) {
@@ -828,7 +828,7 @@ public class CVManagerApp {
                 ComputerSkill cs = new ComputerSkill(name, level);
                 cm.addComputerSkill(cs);
             }
-            //resume.setComputerSkills(cm);
+            resume.setComputerSkills(cm);
 
             ExperienceManager em = new ExperienceManager();
             for (int i = 0; i < experiences.size(); i++) {
@@ -838,7 +838,7 @@ public class CVManagerApp {
                 Experience ex = new Experience(name, description, year);
                 em.addExperience(ex);
             }
-            //resume.setExperiences(em);
+            resume.setExperiences(em);
 
             ProfessionalExperienceManager pem = new ProfessionalExperienceManager();
             for (int i = 0; i < experiencesProf.size(); i++) {
@@ -848,7 +848,7 @@ public class CVManagerApp {
                 ProfessionalExperience pex = new ProfessionalExperience(society, year, job);
                 pem.addProfessionnalExperience(pex);
             }
-           //resume.setProfessionalExperiences(pem);
+           resume.setProfessionalExperiences(pem);
 
             SchoolManager sm = new SchoolManager();
             for (int i = 0; i < schools.size(); i++) {
@@ -858,12 +858,11 @@ public class CVManagerApp {
                 School sc = new School(name, diplom, year);
                 sm.addSchool(sc);
             }
-           //resume.setSchools(sm);
+            resume.setSchools(sm);
 
-            Resume r = new Resume(nom.getText(), prenom.getText(), objectif.getText(), sm, pem, lm, em, cm);
+            //Resume r = new Resume(nom.getText(), prenom.getText(), objectif.getText(), sm, pem, lm, em, cm);
             //r.setLanguages(lm);
-
-            dispatcher.invoke(new JAXBSource(jc, r));
+            dispatcher.invoke(new JAXBSource(jc, resume));
             return true;
         }
     }

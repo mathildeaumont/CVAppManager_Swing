@@ -813,11 +813,14 @@ public class CVManagerApp {
             for (int i = 0; i < languages.size(); i++) {
                 String name = languages.get(i).getText(); i++;
                 String level = languages.get(i).getText();
-                Language lang = new Language(name, level);
-                /*System.out.println(name);
-                System.out.println(lang.getLevel());*/
-
-                lm.addLanguage(lang);
+                if (!name.equals("") && !level.equals("")) {
+                    Language lang = new Language(name, level);
+                    lm.addLanguage(lang);
+                } else if (name.equals("") && level.equals("")) {
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Les 2 champs des langues sont obligatoires !");
+                    return false;
+                }
             }
             resume.setLanguages(lm);
 
@@ -825,8 +828,14 @@ public class CVManagerApp {
             for (int i = 0; i < compInf.size(); i++) {
                 String name = compInf.get(i).getText(); i++;
                 String level = compInf.get(i).getText();
-                ComputerSkill cs = new ComputerSkill(name, level);
-                cm.addComputerSkill(cs);
+                if (!name.equals("") && !level.equals("")) {
+                    ComputerSkill cs = new ComputerSkill(name, level);
+                    cm.addComputerSkill(cs);
+                } else if (name.equals("") && level.equals("")) {
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Les 2 champs des compétences informatiques sont obligatoires !");
+                    return false;
+                }
             }
             resume.setComputerSkills(cm);
 
@@ -835,8 +844,14 @@ public class CVManagerApp {
                 String name = experiences.get(i).getText(); i++;
                 String description = experiences.get(i).getText(); i++;
                 String year = experiences.get(i).getText();
-                Experience ex = new Experience(name, description, year);
-                em.addExperience(ex);
+                if (!name.equals("") && !description.equals("") && !year.equals("")) {
+                    Experience ex = new Experience(name, description, year);
+                    em.addExperience(ex);
+                } else if (name.equals("") && description.equals("") && year.equals("")) {
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Les 3 champs des expériences sont obligatoires !");
+                    return false;
+                }
             }
             resume.setExperiences(em);
 
@@ -845,18 +860,30 @@ public class CVManagerApp {
                 String society = experiencesProf.get(i).getText(); i++;
                 String year = experiencesProf.get(i).getText(); i++;
                 String job = experiencesProf.get(i).getText();
-                ProfessionalExperience pex = new ProfessionalExperience(society, year, job);
-                pem.addProfessionnalExperience(pex);
+                if (!society.equals("") && !year.equals("") && !job.equals("")) {
+                    ProfessionalExperience pex = new ProfessionalExperience(society, year, job);
+                    pem.addProfessionnalExperience(pex);
+                } else if (society.equals("") && year.equals("") && job.equals("")) {
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Les 3 champs des expériences professionnelles sont obligatoires !");
+                    return false;
+                }
             }
-           resume.setProfessionalExperiences(pem);
+            resume.setProfessionalExperiences(pem);
 
             SchoolManager sm = new SchoolManager();
             for (int i = 0; i < schools.size(); i++) {
                 String name = schools.get(i).getText(); i++;
                 String diplom = schools.get(i).getText(); i++;
                 String year = schools.get(i).getText();
-                School sc = new School(name, diplom, year);
-                sm.addSchool(sc);
+                if (!name.equals("") && !diplom.equals("") && !year.equals("")) {
+                    School sc = new School(name, diplom, year);
+                    sm.addSchool(sc);
+                } else if (name.equals("") && diplom.equals("") && year.equals("")) {
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Les 3 champs des formations sont obligatoires !");
+                    return false;
+                }
             }
             resume.setSchools(sm);
 

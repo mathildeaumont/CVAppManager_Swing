@@ -36,8 +36,8 @@ public class CVManagerApp {
 
     private static final int FRAME_WIDTH = 420;
     private static final int FRAME_HEIGHT = 600;
-    //private static final String url = "http://tpaumontxml.mathildeaumont.cloudbees.net/rest/resume";
-    private static final String url = "http://localhost:8080/TPAumontXML-1.0-SNAPSHOT/rest/resume";
+    private static final String url = "http://tpaumontxml.mathildeaumont.cloudbees.net/rest/resume";
+    //private static final String url = "http://localhost:8080/TPAumontXML-1.0-SNAPSHOT/rest/resume";
     private JFrame frame;
     private JTextPane textArea;
     private JScrollPane scroll;
@@ -777,6 +777,8 @@ public class CVManagerApp {
         Map<String, Object> requestContext = dispatcher.getRequestContext();
         requestContext.put(MessageContext.HTTP_REQUEST_METHOD, "PUT");
 
+        boolean added = true;
+
         if (nom.getText().equals("")) {
             JOptionPane.showMessageDialog(frame, "Le champ Nom doit être rempli !");
             return false;
@@ -819,6 +821,7 @@ public class CVManagerApp {
                 } else if (name.equals("") && level.equals("")) {
                 } else {
                     JOptionPane.showMessageDialog(frame, "Les 2 champs des langues sont obligatoires !");
+                    added = false;
                     return false;
                 }
             }
@@ -834,6 +837,7 @@ public class CVManagerApp {
                 } else if (name.equals("") && level.equals("")) {
                 } else {
                     JOptionPane.showMessageDialog(frame, "Les 2 champs des compétences informatiques sont obligatoires !");
+                    added = false;
                     return false;
                 }
             }
@@ -850,6 +854,7 @@ public class CVManagerApp {
                 } else if (name.equals("") && description.equals("") && year.equals("")) {
                 } else {
                     JOptionPane.showMessageDialog(frame, "Les 3 champs des expériences sont obligatoires !");
+                    added = false;
                     return false;
                 }
             }
@@ -866,6 +871,7 @@ public class CVManagerApp {
                 } else if (society.equals("") && year.equals("") && job.equals("")) {
                 } else {
                     JOptionPane.showMessageDialog(frame, "Les 3 champs des expériences professionnelles sont obligatoires !");
+                    added = false;
                     return false;
                 }
             }
@@ -882,14 +888,21 @@ public class CVManagerApp {
                 } else if (name.equals("") && diplom.equals("") && year.equals("")) {
                 } else {
                     JOptionPane.showMessageDialog(frame, "Les 3 champs des formations sont obligatoires !");
+                    added = false;
                     return false;
                 }
             }
             resume.setSchools(sm);
 
-            //Resume r = new Resume(nom.getText(), prenom.getText(), objectif.getText(), sm, pem, lm, em, cm);
-            //r.setLanguages(lm);
-            dispatcher.invoke(new JAXBSource(jc, resume));
+            try {
+                dispatcher.invoke(new JAXBSource(jc, resume));
+            } catch (Exception e) {
+                //
+            }
+
+            if (added == true) {
+                JOptionPane.showMessageDialog(frame, "CV ajouté !");
+            }
             return true;
         }
     }

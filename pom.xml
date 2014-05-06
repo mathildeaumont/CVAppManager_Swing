@@ -8,7 +8,7 @@
     <artifactId>CVAppManager_Swing</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <properties>
         <spring.version>3.0.5.RELEASE</spring.version>
     </properties>
@@ -36,4 +36,33 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <!-- packaging de l'application -->
+            <plugin>
+                <!-- NOTE: We don't need a groupId specification because the group is org.apache.maven.plugins ...which is assumed by default. -->
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/jar.xml</descriptor>
+                    </descriptors>
+                    <archive>
+                        <manifest>
+                            <mainClass>CVManagerApp</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>executable</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
